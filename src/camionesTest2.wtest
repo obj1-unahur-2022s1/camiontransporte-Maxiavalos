@@ -1,0 +1,30 @@
+import camion2.*
+import cosas2.*
+
+describe "Test de camion cargado"{
+	test"Bumblebee como Robot, batería antiaérea, embalaje con ladrillos dentro."{
+		
+		bumblebee.estaTransformadoEnAuto(true)
+		camion.cargar(bumblebee)
+		
+		
+		arena.peso(150)
+		camion.cargar(arena)
+		
+		bateriaAntiarea.estaConMisiles(true)
+		camion.cargar(bateriaAntiarea)
+		
+		paqueteLadrillos.cantidadDeLadrillos(80)
+		embalajeSeguridad.envuelveA(paqueteLadrillos)
+		camion.cargar(embalajeSeguridad)
+		
+		
+		
+		
+		assert.equals(7, camion.totalBultos())
+		
+
+		
+	}
+	
+}

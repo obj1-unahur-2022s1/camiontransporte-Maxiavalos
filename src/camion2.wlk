@@ -1,8 +1,11 @@
-import cosas.*
+import cosas2.*
 
 object camion {
 	const cosas=[]
-	method cargar(cosa){cosas.add(cosa)}
+	method cargar(cosa){
+		cosas.add(cosa)
+		cosa.consecuenciaDeCarga()
+	}
 	method descargar(cosa){cosas.remove(cosa)}
 	method todoPesoPar()= cosas.all({ o => o.peso().even() })
 	method hayAlgunoQuePesa(peso)= cosas.any({o => o.peso()==peso})
@@ -15,6 +18,8 @@ object camion {
 	method tieneAlgoQuePesaEntre(min, max)= cosas.any({o => o.peso().between(min,max)})  
 	method cosaMasPesada()= cosas.max({o => o.peso()})
 	method peso()= cosas.map({o=> o.peso()})
+	
+	method totalBultos()= cosas.sum({o => o.bultos()})
 
 
 }

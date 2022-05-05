@@ -1,0 +1,53 @@
+import camion2.*
+import cosas2.*
+
+describe "Test de consecuencias de la carga"{
+	test"Test para KnightRider"{
+		camion.cargar(knightRider)
+		assert.equals(500, knightRider.peso() )
+		assert.equals(10, knightRider.nivelDePeligrosidad())
+		
+	}
+	test"Test para Bumblebee"{
+		bumblebee.estaTransformadoEnAuto(true)
+		camion.cargar(bumblebee)
+		assert.notThat(bumblebee.estaTransformadoEnAuto())
+	}
+	test "Test para Paquete de Ladrillos"{
+		paqueteLadrillos.cantidadDeLadrillos(1)
+		camion.cargar(paqueteLadrillos)
+		assert.equals(13, paqueteLadrillos.cantidadDeLadrillos())
+	}
+	
+	test "Test para arena a granel"{
+		arena.peso(1)
+		camion.cargar(arena)
+		assert.equals(13, arena.peso())
+	}
+	
+	test "Test para batería antiaérea"{
+		bateriaAntiarea.estaConMisiles(false)
+		camion.cargar(bateriaAntiarea)
+		assert.that(bateriaAntiarea.estaConMisiles())
+	}
+	
+	test "Test para contenedor portuariol"{
+		arena.peso(1)
+		contenedor.agregarCosa(arena)
+		camion.cargar(contenedor)
+		assert.equals(13, arena.peso())
+	}
+	
+	test "Test para residuos radioactivos"{
+		residuosRadioactivos.peso(1)
+		camion.cargar(residuosRadioactivos)
+		assert.equals(16, residuosRadioactivos.peso())
+	}
+	
+	test "Test para embalaje de seguridad"{
+		arena.peso(1)
+		embalajeSeguridad.envuelveA(arena)
+		camion.cargar(embalajeSeguridad)
+		assert.equals(1, embalajeSeguridad.peso())
+	}
+}
