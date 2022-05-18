@@ -1,4 +1,7 @@
 import cosas2.*
+/*
+ * Muy Bien agregadas las consecuencia de la carga
+ */
 
 object camion {
 	const cosas=[]

@@ -1,3 +1,9 @@
+/*
+ * Muy Bien las cosas.
+ * Recoda que podes usar el codigo corto con if tambien
+ * por ejemplo en nivelDePeligrosidad de bumblebee
+ */
+
 object knightRider {
 	method peso()= 500
 	method nivelDePeligrosidad() = 10
@@ -7,15 +13,7 @@ object knightRider {
 object bumblebee {
 	var property estaTransformadoEnAuto
 	method peso()= 800
-	method nivelDePeligrosidad(){
-		if (estaTransformadoEnAuto){
-			return 15
-		}
-		else{
-			return 30
-		}
-	}
-
+	method nivelDePeligrosidad() = if (estaTransformadoEnAuto){15}else{30}
 }
 
 object paqueteLadrillos{
